@@ -26,7 +26,7 @@ def main():
 
     )
 
-    displayPDF("./files/cv/cv.pdf")
+    displayPDF("../files/cv/cv.pdf")
     
 
     

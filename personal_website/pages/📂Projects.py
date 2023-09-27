@@ -35,7 +35,7 @@ def main():
         }
     )
     
-    get_project_data("./files/projects/excel/project_descriptions.xlsx")
+    get_project_data("../files/projects/excel/project_descriptions.xlsx")
 
     for i in range(len(data)):
         open_project_image(data.iloc[i,1])
