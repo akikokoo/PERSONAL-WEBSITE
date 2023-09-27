@@ -38,9 +38,12 @@ def main():
     get_project_data("../files/projects/excel/project_descriptions.xlsx")
 
     for i in range(len(data)):
-        open_project_image(data.iloc[i,1])
         st.markdown(f'''
-        <p align="center">{data.iloc[i,0]}</p>
+        <h1 align="center">{data.iloc[i,0]}</h1>
+        ''',unsafe_allow_html=True)
+        open_project_image(data.iloc[i,2])
+        st.markdown(f'''
+        <p align="center">{data.iloc[i,1]}</p>
         ''',unsafe_allow_html=True)
         
 
