@@ -6,7 +6,7 @@ import pandas as pd
 def get_project_data(file):
     global data
     data = pd.read_excel(file)
-
+    
 
 def open_project_image(file):
     image = Image.open(file)
