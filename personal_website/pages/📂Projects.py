@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import pandas as pd
-
+import os
 
 def get_project_data(file):
     global data
@@ -35,7 +35,8 @@ def main():
         }
     )
     
-    get_project_data("files/projects/excel/project_descriptions.xlsx")
+    personal_projects_path = os.path.join("files", "projects", "excel", "project_descriptions.XLSX")
+    get_project_data(personal_projects_path)
 
     for i in range(len(data)):
         st.markdown(f'''

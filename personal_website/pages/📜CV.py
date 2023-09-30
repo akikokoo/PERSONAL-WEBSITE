@@ -1,15 +1,19 @@
 import streamlit as st
-import base64
+from PIL import Image
+import os
 
-def displayPDF(file):
-    # Opening file from file path
-    with open(file, "rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+def open_image(file):
+    image = Image.open(file)
+    col1, col2, col3 = st.columns([2,1,6])
 
-    # Embedding PDF in HTML
-    pdf_display = pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width=1000 height="1000" type="application/pdf">'
-    # Displaying File
-    st.markdown(pdf_display, unsafe_allow_html=True)
+    with col1:
+        st.write("")
+
+    with col2:
+        st.image(image, width=600)
+
+    with col3:
+        st.write("")
 
 def main():
     
@@ -26,7 +30,10 @@ def main():
 
     )
 
-    displayPDF("files/cv/cv.pdf")
+    personal_cv_path = os.path.join("files","cv","cv.png")
+
+    open_image(personal_cv_path)
+    
     
 
     
