@@ -42,6 +42,9 @@ def main():
         st.markdown(f'''
         <h1 align="center">{data.iloc[i,0]}</h1>
         ''',unsafe_allow_html=True)
+        st.markdown(f'''
+        <a href={data.iloc[i,3]} align="center"><h4 align="center">App Link</h4></a>
+        ''',unsafe_allow_html=True)
         open_project_image(data.iloc[i,2])
         st.markdown(f'''
         <p align="center">{data.iloc[i,1]}</p>
